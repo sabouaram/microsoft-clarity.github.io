@@ -3,22 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clarity Test Page</title>
+  <title>Microsoft Clarity Enhanced Test Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    .scroll-box {
+      width: 100%;
+      max-width: 600px;
+      height: 150px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .section {
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #eee;
+      background: #f9f9f9;
+    }
+    button {
+      margin: 5px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #aaa;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <h1>Microsoft clarity test page</h1>
+  <h1>Microsoft Clarity Enhanced Test Page</h1>
 
-  <button onclick="alert('Button 1 clicked!')">Button 1</button>
-  <button onclick="alert('Button 2 clicked!')">Button 2</button>
-  <button onclick="alert('Button 3 clicked!')">Button 3</button>
+  <!-- Buttons -->
+  <div class="section">
+    <h2>Button Click Tracking</h2>
+    <button onclick="alert('Button 1 clicked!')">Button 1</button>
+    <button onclick="alert('Button 2 clicked!')">Button 2</button>
+    <button onclick="alert('Button 3 clicked!')">Button 3</button>
+  </div>
+
+  <!-- Scrollable Textbox -->
+  <div class="section">
+    <h2>Scrolling Content Tracking</h2>
+    <div class="scroll-box">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+      <p>Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+      <p>Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+      <p>Proin euismod, turpis vel commodo egestas, nunc felis hendrerit justo, eget vestibulum est nisl at justo.</p>
+      <p>Mauris sagittis felis at sapien gravida, nec fermentum lacus laoreet.</p>
+      <p>Vivamus ac ultrices risus. Integer nec nisi nec nulla volutpat tincidunt.</p>
+    </div>
+  </div>
+
+  <!-- Forms -->
+  <div class="section">
+    <h2>Form Interaction Tracking</h2>
+    <form onsubmit="alert('Form submitted!'); return false;">
+      <label>Name: <input type="text" name="name"></label><br><br>
+      <label>Email: <input type="email" name="email"></label><br><br>
+      <label>Message:<br>
+        <textarea name="message" rows="4" cols="40"></textarea>
+      </label><br><br>
+      <label>Choose an option:
+        <select name="options">
+          <option value="opt1">Option 1</option>
+          <option value="opt2">Option 2</option>
+          <option value="opt3">Option 3</option>
+        </select>
+      </label><br><br>
+      <label><input type="checkbox" name="subscribe"> Subscribe to newsletter</label><br><br>
+      <label><input type="radio" name="choice" value="yes"> Yes</label>
+      <label><input type="radio" name="choice" value="no"> No</label><br><br>
+      <button type="submit">Submit Form</button>
+    </form>
+  </div>
+
+  <!-- Expand/Collapse Section -->
+  <div class="section">
+    <h2>Dynamic Content Tracking</h2>
+    <button onclick="toggleDetails()">Toggle Details</button>
+    <div id="details" class="hidden">
+      <p>This is extra content that appears when the user expands the section. Great for testing visibility tracking in Clarity!</p>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="section">
+    <h2>Table Interaction Tracking</h2>
+    <p>Click headers to simulate sorting.</p>
+    <table>
+      <thead>
+        <tr>
+          <th onclick="alert('Sort by Name')">Name</th>
+          <th onclick="alert('Sort by Age')">Age</th>
+          <th onclick="alert('Sort by Country')">Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Alice</td><td>28</td><td>USA</td></tr>
+        <tr><td>Bob</td><td>34</td><td>UK</td></tr>
+        <tr><td>Charlie</td><td>22</td><td>Canada</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Navigation -->
+  <div class="section">
+    <h2>Navigation Tracking</h2>
+    <a href="#section1">Go to Section 1</a> | 
+    <a href="#section2">Go to Section 2</a> | 
+    <a href="#top">Back to Top</a>
+  </div>
 
   <!-- Microsoft Clarity Tracking Code -->
   <script type="text/javascript">
+    function toggleDetails() {
+      const details = document.getElementById("details");
+      details.classList.toggle("hidden");
+    }
+
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "swy896low1");
-</script>
+  </script>
 </body>
 </html>
